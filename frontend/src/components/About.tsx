@@ -8,13 +8,13 @@ export const About: React.FC = () => {
         
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-mono text-cyan-400 uppercase font-bold tracking-widest block mb-2">
-            System Architecture
+            100% In-Browser Architecture
           </span>
           <h2 className="text-3xl font-extrabold text-white tracking-tight">
-            WAAM AI Digital Twin Architecture
+            Pyodide WebAssembly Engine Architecture
           </h2>
           <p className="text-sm text-slate-400 mt-2">
-            Integration specs for high-precision Wire Arc Additive Manufacturing process prediction.
+            Zero server dependencies. The original <code className="text-cyan-400 font-mono">WAAM_AI_Model.pkl</code> runs directly inside your browser memory using Pyodide WASM.
           </p>
         </div>
 
@@ -24,9 +24,9 @@ export const About: React.FC = () => {
             <div className="w-12 h-12 rounded-2xl bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
               <Layers className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-white">Multi-Output Estimators</h3>
+            <h3 className="text-lg font-bold text-white">Direct PKL Deserialization</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Consists of a 10-target Random Forest Regressor combined with twin Random Forest Classifiers for real-time weld quality scoring and edge AI hardware recommendation.
+              Fetches the original <code className="text-cyan-400 font-mono">WAAM_AI_Model.pkl</code> binary file from <code className="text-cyan-400 font-mono">/model/</code> and unpickles it into WebAssembly memory using Pyodide's <code className="text-cyan-400 font-mono">joblib</code>.
             </p>
           </div>
 
@@ -34,9 +34,9 @@ export const About: React.FC = () => {
             <div className="w-12 h-12 rounded-2xl bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
               <Server className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-white">FastAPI Async Engine</h3>
+            <h3 className="text-lg font-bold text-white">Zero Backend Network Latency</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Model parameters are loaded into memory once during application startup. Dynamic schema reflection extracts categorical features without hardcoded frontend assumptions.
+              No API calls or remote server roundtrips. React forms pass input objects directly to the WebAssembly Python runtime, completing predictions instantly in browser RAM.
             </p>
           </div>
 
@@ -44,9 +44,9 @@ export const About: React.FC = () => {
             <div className="w-12 h-12 rounded-2xl bg-blue-950/80 border border-blue-500/30 flex items-center justify-center text-blue-400">
               <Cpu className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-white">Edge AI Deployment</h3>
+            <h3 className="text-lg font-bold text-white">In-Memory Model Caching</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Evaluates compute complexity per weld path, matching real-time inferencing requirements to embedded systems like NVIDIA Jetson Xavier and Jetson Nano.
+              Pyodide runtime and the <code className="text-cyan-400 font-mono">WAAMAI</code> model instance are loaded once on page load and cached globally in browser state for subsequent predictions.
             </p>
           </div>
 
